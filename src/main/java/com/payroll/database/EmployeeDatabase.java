@@ -16,5 +16,8 @@ public class EmployeeDatabase {
     public void addEmployee(int empId,Employee e){
         hm.put(empId,e);
     }
+    public void removeEmployee(int empId){
+        hm.remove(empId);
+    }
 
 }

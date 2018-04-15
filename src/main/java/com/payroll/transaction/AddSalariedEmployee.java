@@ -4,8 +4,10 @@ import main.java.com.payroll.classification.PaymentClassification;
 import main.java.com.payroll.classification.SalariedClassification;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.method.HoldMethod;
+import main.java.com.payroll.method.PaymentMethod;
 import main.java.com.payroll.model.Employee;
 import main.java.com.payroll.schedule.MonthlySchedule;
+import main.java.com.payroll.schedule.PaymentSchedule;
 
 public class AddSalariedEmployee extends AddEmployeeTransaction {
     double itsSalary;
@@ -13,27 +15,14 @@ public class AddSalariedEmployee extends AddEmployeeTransaction {
         super(id,name,home);
         itsSalary=salary;
      }
-    int getEmployeeId(){
-        return empId;
+    public PaymentClassification getPaymentClassification(){
+        paymentClassification=new SalariedClassification(itsSalary);
+        return paymentClassification;
     }
-    String getName(){
-        return itsName;
-    }
-    String getAddress(){
-        return itsAddress;
+    public PaymentSchedule getPaymentSchedule(){
+        return new MonthlySchedule();
     }
 
-    @Override
-    public void execute() {
-        Employee e = new Employee(this.getEmployeeId(), this.getName(), this.getAddress());
-        paymentClassification= new SalariedClassification(itsSalary);
-        paymentSchedule=new MonthlySchedule();
-        paymentMethod=new HoldMethod();
-        e.setPaymentClassification(getPaymentClassification());
-        e.setPaymentSchedule(getPaymentSchedule());
-        e.setPaymentMethod(getPaymentMethod());
-        EmployeeDatabase.GpayrollDatebase.addEmployee(this.getEmployeeId(),e);
-    }
 
     @Override
     public void validate() {

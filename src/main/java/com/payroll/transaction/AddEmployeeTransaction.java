@@ -2,9 +2,12 @@ package main.java.com.payroll.transaction;
 
 import main.java.com.Transaction;
 import main.java.com.payroll.classification.PaymentClassification;
+import main.java.com.payroll.classification.SalariedClassification;
 import main.java.com.payroll.database.EmployeeDatabase;
+import main.java.com.payroll.method.HoldMethod;
 import main.java.com.payroll.method.PaymentMethod;
 import main.java.com.payroll.model.Employee;
+import main.java.com.payroll.schedule.MonthlySchedule;
 import main.java.com.payroll.schedule.PaymentSchedule;
 
 public class AddEmployeeTransaction implements Transaction {
@@ -22,19 +25,32 @@ public class AddEmployeeTransaction implements Transaction {
         itsName=name;
         empId=id;
     }
-    public PaymentClassification getPaymentClassification(){
+    int getEmployeeId(){
+        return empId;
+    }
+    String getName(){
+        return itsName;
+    }
+    String getAddress(){
+        return itsAddress;
+    }
+
+    PaymentClassification getPaymentClassification(){
         return paymentClassification;
     }
-    public PaymentSchedule getPaymentSchedule(){
+    PaymentSchedule getPaymentSchedule(){
         return paymentSchedule;
     }
-    public PaymentMethod getPaymentMethod(){
-        return paymentMethod;
-    }
+
 
 
     @Override
     public void execute() {
+        Employee e = new Employee(this.getEmployeeId(), this.getName(), this.getAddress());
+        e.setPaymentClassification(getPaymentClassification());
+        e.setPaymentSchedule(getPaymentSchedule());
+        e.setPaymentMethod(new HoldMethod());
+        EmployeeDatabase.GpayrollDatebase.addEmployee(this.getEmployeeId(),e);
 
     }
 
