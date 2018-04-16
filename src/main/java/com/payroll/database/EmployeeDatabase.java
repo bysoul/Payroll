@@ -4,9 +4,6 @@ import main.java.com.payroll.model.Employee;
 
 import java.util.HashMap;
 
-/**
- * Created by lenovo on 2018/4/7.
- */
 public class EmployeeDatabase {
     public static EmployeeDatabase GpayrollDatebase=new EmployeeDatabase();
     HashMap<Integer,Employee> hm=new HashMap<>();

@@ -25,6 +25,12 @@ public class Employee {
     public String getAddress(){
         return itsAddress;
     }
+    public void setName(String name){
+        itsName=name;
+    }
+    public void setAddress(String address){
+        itsAddress=address;
+    }
 
     public PaymentClassification getClassification() {
         return paymentClassification;

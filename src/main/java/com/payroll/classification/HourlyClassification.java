@@ -15,6 +15,7 @@ public class HourlyClassification extends PaymentClassification {
     public double getHourlyRate(){
         return itsHourlyRate;
     }
+
     public void addTimeCard(TimeCard tc){
         if(timeCards==null){
             synchronized (HourlyClassification.class){
@@ -24,7 +25,6 @@ public class HourlyClassification extends PaymentClassification {
         }
         timeCards.put(tc.getDate(),tc);
     }
-
     public TimeCard getTimeCard(Date d) {
         return timeCards.get(d);
     }

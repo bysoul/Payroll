@@ -19,7 +19,6 @@ public class AddEmployeeTransaction implements Transaction {
     PaymentSchedule paymentSchedule;
     PaymentMethod paymentMethod;
 
-    //HoldMethod;
     public AddEmployeeTransaction(int id, String name,  String address){
         itsAddress=address;
         itsName=name;
