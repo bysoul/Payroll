@@ -1,6 +1,7 @@
 package main.java.com.payroll.transaction;
 
 import main.java.com.Transaction;
+import main.java.com.payroll.affilition.NoAffilition;
 import main.java.com.payroll.classification.PaymentClassification;
 import main.java.com.payroll.classification.SalariedClassification;
 import main.java.com.payroll.database.EmployeeDatabase;
@@ -49,6 +50,7 @@ public class AddEmployeeTransaction implements Transaction {
         e.setPaymentClassification(getPaymentClassification());
         e.setPaymentSchedule(getPaymentSchedule());
         e.setPaymentMethod(new HoldMethod());
+        e.setAffiliation(new NoAffilition());
         EmployeeDatabase.GpayrollDatebase.addEmployee(this.getEmployeeId(),e);
 
     }

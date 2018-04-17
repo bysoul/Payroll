@@ -1,4 +1,4 @@
 package main.java.com.payroll.affilition;
 
-public class NoAffilition {
+public class NoAffilition extends Affiliation {
 }

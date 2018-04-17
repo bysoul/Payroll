@@ -1,9 +1,11 @@
 package test.java.com.payroll.transaction;
 
+import main.java.com.payroll.ServiceCharge;
 import main.java.com.payroll.affilition.UnionAffilition;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 import main.java.com.payroll.transaction.AddHourlyEmployee;
+import main.java.com.payroll.transaction.ServiceChargeTranscation;
 
 public class TestAddServiceCharge {
     public static void main(String[] args){
@@ -20,7 +22,7 @@ public class TestAddServiceCharge {
         sct.execute();
         ServiceCharge sc=af.getServiceCharge(20180416);
         assert sc!=null;
-        assert sc.getAmount()==12.95;
+        assert sc.getCharge()==12.95;
 
     }
 }

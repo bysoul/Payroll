@@ -9,6 +9,12 @@ public class Date {
         itsMonth=month;
         itsDay=day;
     }
+    public Date(long date){
+        itsDay=(int)date%100;
+        date/=100;
+        itsMonth=(int)date%100;
+        itsYear=(int)date/100;
+    }
     @Override
     public int hashCode() {
         return itsDay*itsMonth*itsYear;

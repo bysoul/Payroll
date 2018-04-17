@@ -1,5 +1,6 @@
 package main.java.com.payroll.model;
 
+import main.java.com.payroll.affilition.Affiliation;
 import main.java.com.payroll.classification.PaymentClassification;
 import main.java.com.payroll.method.PaymentMethod;
 import main.java.com.payroll.schedule.PaymentSchedule;
@@ -11,6 +12,7 @@ public class Employee {
     PaymentClassification paymentClassification;
     PaymentSchedule paymentSchedule;
     PaymentMethod paymentMethod;
+    Affiliation affiliation;
     public Employee(int employeeId, String name, String address){
         empId=employeeId;
         itsAddress=address;
@@ -41,6 +43,11 @@ public class Employee {
     public PaymentMethod getMethod() {
         return paymentMethod;
     }
+
+    public Affiliation getAffiliation() {
+        return affiliation;
+    }
+
     public void setPaymentClassification(PaymentClassification p){
         paymentClassification=p;
     }
@@ -50,5 +57,6 @@ public class Employee {
     public void setPaymentMethod(PaymentMethod p){
         paymentMethod=p;
     }
+    public void setAffiliation(Affiliation a){affiliation=a;}
 
 }

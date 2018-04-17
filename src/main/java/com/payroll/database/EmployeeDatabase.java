@@ -6,15 +6,25 @@ import java.util.HashMap;
 
 public class EmployeeDatabase {
     public static EmployeeDatabase GpayrollDatebase=new EmployeeDatabase();
-    HashMap<Integer,Employee> hm=new HashMap<>();
+    HashMap<Integer,Employee> ehm=new HashMap<>();
+    HashMap<Integer,Integer> mhm=new HashMap<>();
     public Employee getEmployee(int empId){
-        return hm.get(empId);
+        return ehm.get(empId);
     }
     public void addEmployee(int empId,Employee e){
-        hm.put(empId,e);
+        ehm.put(empId,e);
     }
     public void removeEmployee(int empId){
-        hm.remove(empId);
+        ehm.remove(empId);
+    }
+    public void addUnionMember(int memberId,Employee e){
+        mhm.put(memberId,e.getEmployeeId());
+    }
+    public Employee getUnionMember(int itsMemberId){
+        return ehm.get(mhm.get(itsMemberId));
+    }
+    public void removeUnionMember(int memberId){
+        mhm.remove(memberId);
     }
 
 }
