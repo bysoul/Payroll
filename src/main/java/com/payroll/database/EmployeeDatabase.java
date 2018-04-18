@@ -3,6 +3,8 @@ package main.java.com.payroll.database;
 import main.java.com.payroll.model.Employee;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class EmployeeDatabase {
     public static EmployeeDatabase GpayrollDatebase=new EmployeeDatabase();
@@ -26,5 +28,13 @@ public class EmployeeDatabase {
     public void removeUnionMember(int memberId){
         mhm.remove(memberId);
     }
+    public List<Integer>getAllEmployeeIds(){
+        List<Integer> list=new LinkedList<>();
+        for(int i:ehm.keySet()){
+            list.add(i);
+        }
+        return list;
+    }
+
 
 }

@@ -1,5 +1,7 @@
 package main.java.com.payroll.classification;
 
+import main.java.com.payroll.pay.Paycheck;
+
 /**
  * Created by lenovo on 2018/4/13.
  */
@@ -9,6 +11,9 @@ public class SalariedClassification extends PaymentClassification {
         itsSalary=salary;
     }
     public double getSalary(){
+        return itsSalary;
+    }
+    public double calculatePay(Paycheck pc){
         return itsSalary;
     }
 }

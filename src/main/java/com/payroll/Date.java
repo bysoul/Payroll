@@ -1,5 +1,5 @@
 package main.java.com.payroll;
-
+//import java.util.Date;
 public class Date {
     int itsYear;
     int itsMonth;
@@ -15,6 +15,19 @@ public class Date {
         itsMonth=(int)date%100;
         itsYear=(int)date/100;
     }
+
+    public int getItsDay() {
+        return itsDay;
+    }
+
+    public int getItsMonth() {
+        return itsMonth;
+    }
+
+    public int getItsYear() {
+        return itsYear;
+    }
+
     @Override
     public int hashCode() {
         return itsDay*itsMonth*itsYear;
