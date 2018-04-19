@@ -8,6 +8,7 @@ public class Paycheck {
     double itsNetPay;
     Date itsDate;
     String itsDisposition;
+    Date itsPayPeriodEndDate;
 
     public Paycheck(Date date){
         itsDate=date;
@@ -23,6 +24,9 @@ public class Paycheck {
     }
     public void setDisposition(String s){
         itsDisposition=s;
+    }
+    public void setPayPeriodEndDate(Date payPeriodEndDate){
+        itsPayPeriodEndDate=payPeriodEndDate;
     }
 
     public Date getPayDate() {
@@ -44,5 +48,8 @@ public class Paycheck {
         if(s.equals("Disposition"))
             return itsDisposition;
         return "Unknown.";
+    }
+    public Date getPayPeriodEndDate(){
+        return itsPayPeriodEndDate;
     }
 }

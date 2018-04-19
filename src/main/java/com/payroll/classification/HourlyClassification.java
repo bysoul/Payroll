@@ -4,7 +4,10 @@ import main.java.com.payroll.TimeCard;
 
 import java.util.ArrayList;
 import main.java.com.payroll.Date;
+import main.java.com.payroll.pay.Paycheck;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class HourlyClassification extends PaymentClassification {
     double itsHourlyRate;
@@ -27,5 +30,24 @@ public class HourlyClassification extends PaymentClassification {
     }
     public TimeCard getTimeCard(Date d) {
         return timeCards.get(d);
+    }
+    public double calculatePay(Paycheck pc){
+        double pay=0;
+        Date payPeriodEndDate=pc.getPayDate();
+        pc.setPayPeriodEndDate(payPeriodEndDate);
+        if(timeCards!=null) {
+            for (Map.Entry<Date, TimeCard> entry : timeCards.entrySet()) {
+                //Not completed:pay in weekends should be double or else.
+                if (payPeriodEndDate.isInSameWeek(entry.getKey())){
+                    double hours = entry.getValue().getHours();
+                    pay += (hours > 8) ? (8 + (hours - 8) * 1.5) * itsHourlyRate : hours * itsHourlyRate;
+                }
+            }
+            pc.setPayPeriodEndDate(payPeriodEndDate);
+            //Delete old timecards.
+            timeCards = new HashMap();
+        }
+        return pay;
+
     }
 }
