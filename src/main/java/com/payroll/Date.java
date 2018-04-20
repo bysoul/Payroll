@@ -47,8 +47,13 @@ public class Date implements Comparable{
         cal1.set(this.getItsYear(),this.getItsMonth()-1,this.getItsDay());
         Calendar cal2 = Calendar.getInstance();
         cal2.set(date.getItsYear(),date.getItsMonth()-1,date.getItsDay());
-        cal1.
-        return cal1.get(Calendar.WEEK_OF_MONTH)==cal2.get(Calendar.WEEK_OF_MONTH);
+
+        int i = cal1.get(Calendar.DAY_OF_WEEK) - cal1.getFirstDayOfWeek();
+        cal1.add(Calendar.DATE,-i);
+        if(cal1.compareTo(cal2)>0) return false;
+        cal1.add(Calendar.DATE,6);
+        if(cal1.compareTo(cal2)<0) return false;
+        return true;
     }
 
     @Override
@@ -89,7 +94,7 @@ public class Date implements Comparable{
         }
     }
     public static void main(String[] args){
-        Date d1=new Date(2018,3,1);
-        System.out.println(d1.isInSameWeek(new Date(2018,2,26)));
+        Date d1=new Date(2018,4,22);
+        System.out.println(d1.isInSameWeek(new Date(2018,4,20)));
     }
 }
