@@ -2,9 +2,9 @@ package main.java.com.payroll.transaction;
 
 import main.java.com.payroll.model.Employee;
 
-public class ChangeAdderssTranscation extends ChangeEmployeeTranscation{
+public class ChangeAdderssTransaction extends ChangeEmployeeTransaction{
     String itsAddress;
-    public ChangeAdderssTranscation(int empId,String address){
+    public ChangeAdderssTransaction(int empId,String address){
         super(empId);
         itsAddress=address;
     }

@@ -3,9 +3,9 @@ package main.java.com.payroll.transaction;
 import main.java.com.payroll.method.Mailmethod;
 import main.java.com.payroll.method.PaymentMethod;
 
-public class ChangeMailTranscation extends ChangeMethodTranscation {
+public class ChangeMailTransaction extends ChangeMethodTransaction {
     String itsAddress;
-    public ChangeMailTranscation(int empId,String address){
+    public ChangeMailTransaction(int empId,String address){
         super(empId);
         itsAddress=address;
     }

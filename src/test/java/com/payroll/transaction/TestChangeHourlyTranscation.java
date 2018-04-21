@@ -7,14 +7,14 @@ import main.java.com.payroll.model.Employee;
 import main.java.com.payroll.schedule.PaymentSchedule;
 import main.java.com.payroll.schedule.WeeklySchedule;
 import main.java.com.payroll.transaction.AddSalariedEmployee;
-import main.java.com.payroll.transaction.ChangeHourlyTranscation;
+import main.java.com.payroll.transaction.ChangeHourlyTransaction;
 
 public class TestChangeHourlyTranscation {
     public static void main(String[] args){
         int empId=3;
         AddSalariedEmployee t=new AddSalariedEmployee(empId,"Lance","Home",2500);
         t.execute();
-        ChangeHourlyTranscation cht=new ChangeHourlyTranscation(empId,27.52);
+        ChangeHourlyTransaction cht=new ChangeHourlyTransaction(empId,27.52);
         cht.execute();
         Employee e= EmployeeDatabase.GpayrollDatebase.getEmployee(empId);
         assert e!=null;

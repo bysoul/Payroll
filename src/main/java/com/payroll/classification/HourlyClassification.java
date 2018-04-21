@@ -38,14 +38,13 @@ public class HourlyClassification extends PaymentClassification {
         if(timeCards!=null) {
             for (Map.Entry<Date, TimeCard> entry : timeCards.entrySet()) {
                 //Not completed:pay in weekends should be double or else.
-                if (payPeriodEndDate.isInSameWeek(entry.getKey())){
+                if (isInPayPeriod(entry.getKey(),pc)){
                     double hours = entry.getValue().getHours();
                     pay += (hours > 8) ? (8 + (hours - 8) * 1.5) * itsHourlyRate : hours * itsHourlyRate;
                 }
             }
-            pc.setPayPeriodEndDate(payPeriodEndDate);
             //Delete old timecards.
-            timeCards = new HashMap();
+            //timeCards.clear();
         }
         return pay;
 

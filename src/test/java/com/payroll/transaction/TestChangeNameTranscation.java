@@ -4,7 +4,7 @@ import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 import main.java.com.payroll.transaction.AddEmployeeTransaction;
 import main.java.com.payroll.transaction.AddHourlyEmployee;
-import main.java.com.payroll.transaction.ChangeNameTranscation;
+import main.java.com.payroll.transaction.ChangeNameTransaction;
 
 
 public class TestChangeNameTranscation {
@@ -12,7 +12,7 @@ public class TestChangeNameTranscation {
         int empId=2;
         AddHourlyEmployee t=new AddHourlyEmployee(empId,"Bill","Home",15.25);
         t.execute();
-        ChangeNameTranscation cnt=new ChangeNameTranscation(empId,"Bob");
+        ChangeNameTransaction cnt=new ChangeNameTransaction(empId,"Bob");
         cnt.execute();
         Employee e= EmployeeDatabase.GpayrollDatebase.getEmployee(empId);
         assert e!=null;

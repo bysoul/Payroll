@@ -10,11 +10,11 @@ import main.java.com.payroll.classification.PaymentClassification;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 
-public class SalesReceiptTranscation implements Transaction {
+public class SalesReceiptTransaction implements Transaction {
     Date date;
     double amount;
     int empId;
-    public SalesReceiptTranscation(Date date,double amount,int empId){
+    public SalesReceiptTransaction(Date date,double amount,int empId){
         this.date=date;
         this.amount=amount;
         this.empId=empId;

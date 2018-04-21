@@ -5,8 +5,8 @@ import main.java.com.payroll.classification.PaymentClassification;
 import main.java.com.payroll.model.Employee;
 import main.java.com.payroll.schedule.PaymentSchedule;
 
-public class ChangeClassificationTranscation extends ChangeEmployeeTranscation {
-    public ChangeClassificationTranscation(int empId){
+public class ChangeClassificationTransaction extends ChangeEmployeeTransaction {
+    public ChangeClassificationTransaction(int empId){
         super(empId);
     }
     PaymentClassification getClassification(){

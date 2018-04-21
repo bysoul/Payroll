@@ -8,11 +8,11 @@ import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 import main.java.com.payroll.Date;
 
-public class TimeCardTranscation implements Transaction{
+public class TimeCardTransaction implements Transaction{
     Date date;
     double hours;
     int empId;
-    public TimeCardTranscation(Date date,double hours,int empId){
+    public TimeCardTransaction(Date date,double hours,int empId){
         this.date=date;
         this.hours=hours;
         this.empId=empId;

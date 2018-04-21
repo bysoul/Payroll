@@ -3,8 +3,8 @@ package main.java.com.payroll.transaction;
 import main.java.com.payroll.method.PaymentMethod;
 import main.java.com.payroll.model.Employee;
 
-public class ChangeMethodTranscation extends ChangeEmployeeTranscation {
-    public ChangeMethodTranscation(int empId){
+public class ChangeMethodTransaction extends ChangeEmployeeTransaction {
+    public ChangeMethodTransaction(int empId){
         super(empId);
     }
 

@@ -4,9 +4,9 @@ import main.java.com.Transaction;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 
-public class ChangeEmployeeTranscation implements Transaction{
+public class ChangeEmployeeTransaction implements Transaction{
     int itsEmpId;
-    public ChangeEmployeeTranscation(int empId){
+    public ChangeEmployeeTransaction(int empId){
         itsEmpId=empId;
     }
     void change(Employee e){

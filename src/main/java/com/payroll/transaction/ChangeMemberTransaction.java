@@ -5,10 +5,10 @@ import main.java.com.payroll.affilition.UnionAffilition;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 
-public class ChangeMemberTranscation extends ChangeAffiliationTranscation {
+public class ChangeMemberTransaction extends ChangeAffiliationTransaction {
     int itsMemberId;
     double itsDue;
-    public ChangeMemberTranscation(int empId,int memberId,double due){
+    public ChangeMemberTransaction(int empId,int memberId,double due){
         super(empId);
         itsMemberId=memberId;
         itsDue=due;

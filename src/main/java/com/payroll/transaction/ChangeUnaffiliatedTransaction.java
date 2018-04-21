@@ -6,8 +6,8 @@ import main.java.com.payroll.affilition.UnionAffilition;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 
-public class ChangeUnaffiliatedTranscation extends ChangeAffiliationTranscation {
-    public ChangeUnaffiliatedTranscation(int empId){
+public class ChangeUnaffiliatedTransaction extends ChangeAffiliationTransaction {
+    public ChangeUnaffiliatedTransaction(int empId){
         super(empId);
     }
 

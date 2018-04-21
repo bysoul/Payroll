@@ -8,9 +8,14 @@ public class Paycheck {
     double itsNetPay;
     Date itsDate;
     String itsDisposition;
+    Date itsPayPeriodStartDate;
     Date itsPayPeriodEndDate;
 
     public Paycheck(Date date){
+        itsDate=date;
+    }
+    public Paycheck(Date payPeriodStartDate,Date date){
+        itsPayPeriodStartDate=payPeriodStartDate;
         itsDate=date;
     }
     public void setGrossPay(double grossPay){
@@ -51,5 +56,8 @@ public class Paycheck {
     }
     public Date getPayPeriodEndDate(){
         return itsPayPeriodEndDate;
+    }
+    public Date getPayPeriodStartDate(){
+        return itsPayPeriodStartDate;
     }
 }

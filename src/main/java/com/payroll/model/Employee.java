@@ -63,7 +63,7 @@ public class Employee {
 
     public void payDay(Paycheck pc){
         double grossPay=paymentClassification.calculatePay(pc);
-        double deductions=affiliation.calculatedeductions(pc);
+        double deductions=affiliation.calculateDeductions(pc);
         double netPay=grossPay-deductions;
         pc.setGrossPay(grossPay);
         pc.setDeductions(deductions);
@@ -72,6 +72,9 @@ public class Employee {
     }
     public boolean isPayDate(Date date){
         return paymentSchedule.isPayDate(date);
+    }
+    public Date getPayPeriodStartDate(Date payDate){
+        return paymentSchedule.getPayPeriodStartDate(payDate);
     }
 
 }

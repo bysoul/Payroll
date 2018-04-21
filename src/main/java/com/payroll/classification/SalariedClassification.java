@@ -1,5 +1,6 @@
 package main.java.com.payroll.classification;
 
+import main.java.com.payroll.Date;
 import main.java.com.payroll.pay.Paycheck;
 
 /**
@@ -14,6 +15,8 @@ public class SalariedClassification extends PaymentClassification {
         return itsSalary;
     }
     public double calculatePay(Paycheck pc){
+        Date payPeriodEndDate=pc.getPayDate();
+        pc.setPayPeriodEndDate(payPeriodEndDate);
         return itsSalary;
     }
 }

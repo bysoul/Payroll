@@ -7,13 +7,18 @@ import main.java.com.payroll.affilition.UnionAffilition;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 
-public class ServiceChargeTranscation implements Transaction {
+public class ServiceChargeTransaction implements Transaction {
     int itsMemberId;
     Date itsDate;
     double itsCharge;
-    public ServiceChargeTranscation(int memberId,long date,double charge){
+    public ServiceChargeTransaction(int memberId,long date,double charge){
         itsMemberId=memberId;
         itsDate=new Date(date);
+        itsCharge=charge;
+    }
+    public ServiceChargeTransaction(int memberId,Date date,double charge){
+        itsMemberId=memberId;
+        itsDate=date;
         itsCharge=charge;
     }
 

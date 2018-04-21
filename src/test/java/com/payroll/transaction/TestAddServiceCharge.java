@@ -5,7 +5,7 @@ import main.java.com.payroll.affilition.UnionAffilition;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 import main.java.com.payroll.transaction.AddHourlyEmployee;
-import main.java.com.payroll.transaction.ServiceChargeTranscation;
+import main.java.com.payroll.transaction.ServiceChargeTransaction;
 
 public class TestAddServiceCharge {
     public static void main(String[] args){
@@ -18,7 +18,7 @@ public class TestAddServiceCharge {
         UnionAffilition af=new UnionAffilition(memberId,12.5);
         e.setAffiliation(af);
         EmployeeDatabase.GpayrollDatebase.addUnionMember(memberId,e);
-        ServiceChargeTranscation sct=new ServiceChargeTranscation(memberId,20180416,12.95);
+        ServiceChargeTransaction sct=new ServiceChargeTransaction(memberId,20180416,12.95);
         sct.execute();
         ServiceCharge sc=af.getServiceCharge(20180416);
         assert sc!=null;

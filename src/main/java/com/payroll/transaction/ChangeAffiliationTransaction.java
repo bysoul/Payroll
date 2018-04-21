@@ -3,8 +3,8 @@ package main.java.com.payroll.transaction;
 import main.java.com.payroll.affilition.Affiliation;
 import main.java.com.payroll.model.Employee;
 
-public class ChangeAffiliationTranscation extends ChangeEmployeeTranscation{
-    public ChangeAffiliationTranscation(int empId){
+public class ChangeAffiliationTransaction extends ChangeEmployeeTransaction{
+    public ChangeAffiliationTransaction(int empId){
         super(empId);
     }
     Affiliation getAffiliation(){

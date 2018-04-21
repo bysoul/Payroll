@@ -15,12 +15,26 @@ public class UnionAffilition extends Affiliation{
         itsMemberId=memberId;
         itsDue=due;
     }
-    public double calculatedeductions(Paycheck pc){
+    public double calculateDeductions(Paycheck pc){
         double ch=0;
-        for(Map.Entry<Date,ServiceCharge> entry:charges.entrySet()){
-            ch+=entry.getValue().getCharge();
+        if(charges!=null) {
+            for (Map.Entry<Date, ServiceCharge> entry : charges.entrySet()) {
+                if (entry.getKey().isBetween(pc.getPayPeriodStartDate(), pc.getPayPeriodEndDate()))
+                    ch += entry.getValue().getCharge();
+            }
         }
-        return itsDue+ch;
+        double dues;
+        int fridays=numberOfFridayInPayPeriod(pc.getPayPeriodStartDate(),pc.getPayPeriodEndDate());
+        dues=itsDue*fridays;
+        return dues+ch;
+    }
+    public int numberOfFridayInPayPeriod(Date payPeriodStart,Date payPeriodEnd){
+        int fridays=0;
+        for(Date day=payPeriodStart;day.compareTo(payPeriodEnd)<=0;day.add(1)){
+            if(day.isFriday())
+                fridays++;
+        }
+        return fridays;
     }
 
     public int getMemberId() {

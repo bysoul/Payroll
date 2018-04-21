@@ -5,7 +5,7 @@ import main.java.com.payroll.affilition.UnionAffilition;
 import main.java.com.payroll.database.EmployeeDatabase;
 import main.java.com.payroll.model.Employee;
 import main.java.com.payroll.transaction.AddHourlyEmployee;
-import main.java.com.payroll.transaction.ChangeMemberTranscation;
+import main.java.com.payroll.transaction.ChangeMemberTransaction;
 
 public class TestChangeMembeerTranscation {
     public static void main(String[] args){
@@ -13,7 +13,7 @@ public class TestChangeMembeerTranscation {
         int memberId=7734;
         AddHourlyEmployee t=new AddHourlyEmployee(empId,"Bill","Home",15.25);
         t.execute();
-        ChangeMemberTranscation cmt=new ChangeMemberTranscation(empId,memberId,99.42);
+        ChangeMemberTransaction cmt=new ChangeMemberTransaction(empId,memberId,99.42);
         cmt.execute();
         Employee e= EmployeeDatabase.GpayrollDatebase.getEmployee(empId);
         assert e!=null;

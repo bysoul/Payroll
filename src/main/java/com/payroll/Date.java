@@ -55,6 +55,17 @@ public class Date implements Comparable{
         if(cal1.compareTo(cal2)<0) return false;
         return true;
     }
+    public void add(int i){
+        Calendar cal1 = Calendar.getInstance();
+        cal1.set(this.getItsYear(),this.getItsMonth()-1,this.getItsDay());
+        cal1.add(Calendar.DATE,i);
+        this.itsYear=cal1.get(Calendar.YEAR);
+        this.itsMonth=cal1.get(Calendar.MONTH)+1;
+        this.itsDay=cal1.get(Calendar.DATE);
+    }
+    public boolean isBetween(Date start,Date end){
+        return start.compareTo(this)<=0&&end.compareTo(this)>=0;
+    }
 
     @Override
     public int compareTo(Object o) {
